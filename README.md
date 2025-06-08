@@ -28,5 +28,6 @@ go run main.go
 ## 📦 Requirements
 
 - Ensure you have **Go** installed.
+- Supports: PNG, JPG, JPEG, GIF
 
 ---
