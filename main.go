@@ -3,7 +3,6 @@ package main
 import (
 	"emoji-converter/logger"
 	"emoji-converter/procedure"
-	"fmt"
 	"os"
 
 	"github.com/charmbracelet/huh"
@@ -23,7 +22,7 @@ func main() {
 
 		err := form.Run()
 		if err != nil {
-			fmt.Println("Error with selection", err.Error())
+			logger.ErrorF("Error with selection: %s", err.Error())
 			continue
 		}
 
@@ -31,10 +30,10 @@ func main() {
 		case "test_print_value":
 			procedure.TestPrintValue()	
 		case "exit":
-			fmt.Println("Goodbye")
+			logger.Info("Goodbye")
 			os.Exit(0)
 		default:
-			fmt.Println("Invalid option")
+			logger.Info("Invalid option")
 		} 
 	}
 }

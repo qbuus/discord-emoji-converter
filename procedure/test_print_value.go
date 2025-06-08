@@ -1,13 +1,14 @@
 package procedure
 
 import (
+	"emoji-converter/logger"
 	"fmt"
 
 	"github.com/charmbracelet/huh"
 )
 
 func TestPrintValue() {
-	fmt.Println("Test Print Value")
+	logger.Info("Test Print Value")
 
 	var stringToPrint string
 	title := "Enter a string to print: "
@@ -21,14 +22,15 @@ func TestPrintValue() {
 		Run()
 	
 		if err != nil {
-			fmt.Println("Error with input", err.Error())
+			logger.ErrorF("Error with input: %s", err.Error())
 			return
 		}
 
 		if stringToPrint == "" {
-			fmt.Println("No input. Returning to menu")
+			logger.Error("No input. Returning to menu")
 			return
 		}
 
+		logger.Info("Entered Value: ", stringToPrint)
 		fmt.Println("Entered Value: ", stringToPrint)
 }
