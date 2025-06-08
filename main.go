@@ -16,6 +16,7 @@ func main() {
 
 		form := huh.NewSelect[string]().
 			Title("Select an option").Options(
+				huh.NewOption("Convert to emoji", "convert_to_emoji"),
 				huh.NewOption("Test - Print value", "test_print_value"),
 				huh.NewOption("Exit", "exit"),
 			).Value(&Option)
@@ -27,6 +28,8 @@ func main() {
 		}
 
 		switch Option {
+		case "convert_to_emoji":
+			procedure.ConvertToEmoji()
 		case "test_print_value":
 			procedure.TestPrintValue()	
 		case "exit":
