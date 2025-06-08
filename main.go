@@ -1,6 +1,7 @@
 package main
 
 import (
+	"emoji-converter/logger"
 	"emoji-converter/procedure"
 	"fmt"
 	"os"
@@ -10,7 +11,7 @@ import (
 
 func main() {
 	for {
-		fmt.Println("Welcome to Emoji Converter")
+		logger.Info("Welcome to Emoji Converter")
 
 		var Option string
 
