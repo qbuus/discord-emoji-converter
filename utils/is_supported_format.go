@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-var supportedFormats = []string{".png", ".jpg", ".jpeg"}
+var supportedFormats = []string{".png", ".jpg", ".jpeg", ".gif"}
 
 func IsSupportedFormat(path string) bool {
 	extension := strings.ToLower(filepath.Ext(path))
